@@ -1,4 +1,8 @@
 ---
 log_level: info
 stripe:
-  api_key: foo
+  api_key: <%= ENV['TEST_APP__STRIPE__API_KEY'] %>
+  open_timeout: 30
+  read_timeout: 80
+  write_timeout: 30
+  max_network_retries: 2
