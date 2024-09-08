@@ -26,11 +26,13 @@ class Application
     # Load settings
     def init_config
       require_file 'config/initializers/config'
+      require_file 'config/initializers/stripe'
     end
 
     # Require application dependencies in the right sequence
     def require_app
       require_dir 'app/lib'
+      require_dir 'app/pipes'
       require_dir 'app'
       require_file 'config/initializers/logger'
       require_dir 'config/initializers'

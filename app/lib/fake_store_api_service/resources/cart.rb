@@ -9,7 +9,9 @@ module FakeStoreApiService
                     :userId,
                     :date,
                     :products,
-                    :_v
+                    :__v,
+                    :user,
+                    :draft_invoice
 
       def self.all
         response = client.get('/carts')
