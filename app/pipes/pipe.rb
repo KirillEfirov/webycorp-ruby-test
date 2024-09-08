@@ -22,5 +22,8 @@ class Pipe
 
   def run(result = [])
     steps.reduce(result) { |r, step| step.call(r) }
+  rescue Stripe::StripeError => e
+    Application.logger.error("Request failed: #{e.message}")
+    raise
   end
 end

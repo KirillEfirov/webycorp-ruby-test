@@ -6,9 +6,18 @@ module FakeStoreApiService
     BASE_URL = 'https://fakestoreapi.com'
 
     def get(path)
-      connection.get do |req|
+      Application.logger.info("Making GET request to: #{BASE_URL}#{path}")
+
+      response = connection.get do |req|
         req.url(path)
       end
+
+      Application.logger.info("Received response: #{response.status} - #{response.body}")
+
+      response
+    rescue Faraday::Error => e
+      Application.logger.error("Request failed: #{e.message}")
+      raise
     end
 
     private

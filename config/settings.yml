@@ -1,5 +1,6 @@
 ---
 log_level: info
+log_output: file
 stripe:
   api_key: <%= ENV['TEST_APP__STRIPE__API_KEY'] %>
   open_timeout: 30

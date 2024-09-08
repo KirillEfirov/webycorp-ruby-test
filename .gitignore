@@ -4,6 +4,8 @@
 config/settings.local.yml
 config/settings/*.local.yml
 
+log/*.log
+
 # Ignore test-related files
 coverage/
 spec/examples.txt

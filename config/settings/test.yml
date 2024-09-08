@@ -1,3 +1,9 @@
 ---
+log_level: info
+log_output: stdout
 stripe:
   api_key: foo
+  open_timeout: 30
+  read_timeout: 80
+  write_timeout: 30
+  max_network_retries: 0
